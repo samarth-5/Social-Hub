@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 
-// import authRoutes from "./routes/authRoutes.js";
+import authRoutes from "./Routes/authRoutes.js";
 // import messageRoutes from "./routes/messageRoutes.js";
 // import userRoutes from "./routes/userRoutes.js";
 
@@ -20,8 +20,8 @@ app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/messages", messageRoutes);
-app.use("/api/users", userRoutes);
+// app.use("/api/messages", messageRoutes);
+// app.use("/api/users", userRoutes);
 
 app.listen(PORT, ()=>{
     console.log('Server is running on port 5000!!');

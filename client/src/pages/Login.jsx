@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Login() {
 
   const [username, setUsername] = useState("");
-	const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit =async(e)=>{}
   
@@ -46,11 +46,11 @@ export default function Login() {
 						{"Don't"} have an account?
 					</Link>
 
-					<div>
+					{/* <div>
 						<button className='btn btn-block btn-sm mt-2' disabled={loading}>
 							{loading ? <span className='loading loading-spinner '></span> : "Login"}
 						</button>
-					</div>
+					</div> */}
 				</form>
 			</div>
 		</div>

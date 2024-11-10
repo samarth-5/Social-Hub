@@ -5,7 +5,7 @@ import cookieParser from 'cookie-parser';
 
 import authRoutes from "./Routes/authRoutes.js";
 import messageRoutes from "./Routes/messageRoutes.js";
-// import userRoutes from "./routes/userRoutes.js";
+import userRoutes from "./Routes/userRoutes.js";
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
-// app.use("/api/users", userRoutes);
+app.use("/api/users", userRoutes);
 
 app.listen(PORT, ()=>{
     console.log('Server is running on port 5000!!');

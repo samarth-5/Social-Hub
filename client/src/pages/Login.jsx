@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useLogin from "../hooks/useLogin.jsx";
 
 export default function Login() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit =async(e)=>{}
+  const { loading, login } = useLogin();
+
+  const handleSubmit =async(e)=>{
+	e.preventDefault();
+	await login(username, password);
+  }
   
   return (
 		<div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
@@ -46,11 +52,11 @@ export default function Login() {
 						{"Don't"} have an account?
 					</Link>
 
-					{/* <div>
+					<div>
 						<button className='btn btn-block btn-sm mt-2' disabled={loading}>
 							{loading ? <span className='loading loading-spinner '></span> : "Login"}
 						</button>
-					</div> */}
+					</div>
 				</form>
 			</div>
 		</div>

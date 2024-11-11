@@ -25,7 +25,7 @@ export default function useSignup() {
 				throw new Error(data.error);
 			}
 			localStorage.setItem("chat-user", JSON.stringify(data));
-            toast.success('Account successfully created!')
+            toast.success('Account created successfully!')
 			setAuthUser(data);
 		} 
         catch (err) {

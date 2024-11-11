@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import useSignup from "../hooks/useSignup.jsx";
 
 export default function Signup() {
 
@@ -43,8 +44,14 @@ export default function Signup() {
   const handleCheckboxChange = (gender) => {
 		setInputs({ ...inputs, gender });
 	};
+
+  const { loading, signup } = useSignup();
   
-  const handleSubmit=()=>{}
+  const handleSubmit = async (e) => {
+		e.preventDefault();
+		//console.log(inputs);
+		await signup(inputs);
+  };
 
   return (
 		<div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
@@ -121,6 +128,9 @@ export default function Signup() {
 							{loading ? <span className='loading loading-spinner'></span> : "Sign Up"}
 						</button>
 					</div> */}
+					<button className='btn btn-block btn-sm mt-2 border border-slate-700' 	>
+							Sign Up
+						</button>
 				</form>
 			</div>
 		</div>

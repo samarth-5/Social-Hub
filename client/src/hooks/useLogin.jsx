@@ -25,8 +25,8 @@ export default function useLogin() {
             toast.success('User has been Logged in successfully!')
 			setAuthUser(data);
 		} 
-        catch (error) {
-			toast.err(err.message);
+        catch (err) {
+			toast.error(err.message);
 		} 
         finally {
 			setLoading(false);

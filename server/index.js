@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import cors from "cors";
 
 import authRoutes from "./Routes/authRoutes.js";
 import messageRoutes from "./Routes/messageRoutes.js";
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGO_URL)
 const PORT = process.env.PORT;
 
 import { app, server } from "./socket/socket.js";
+app.use(cors());
 
 app.use(express.json());
 app.use(cookieParser());
